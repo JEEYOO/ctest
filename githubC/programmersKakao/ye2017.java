@@ -37,7 +37,7 @@ public class ye2017 {
 
     public void findPath(int m, int n, int[][] picture, boolean[][] pathBool) {
         if (pathBool[m][n] == true)
-            return; // 이미 거친 경로일 경우
+            return; // 이미 거친 경로일 경우 바로 나가버림(?) 
         long su = picture[m][n]; // 이미지 값
         int column = picture[0].length;
         int row = picture.length;
