@@ -14,7 +14,7 @@ public class 동적ex {
 		arrr[0] = hmm[0]; // 1
 		arrr[1] = Math.max(hmm[0], hmm[1]); // 1 or 3 -> 3
 		for (int i=2; i<nn; i++) {
-			arrr[i] = Math.max(arrr[i-1], arrr[i-2]+hmm[i]);// 2도 3, 3은 3
+			arrr[i] = Math.max(arrr[i-1], arrr[i-2]+hmm[i]);// 근데 여기서 Max를 생각해내는 거는 수학적 sense 야. 다 공식이 아니라
 		}
 		// 굳이 재귀한다! 라고 할 필요는 없구나 포인트는 (어떻게해서든)그 전 두 값에서 끌어오는 것 
 		return arrr[nn-1];
