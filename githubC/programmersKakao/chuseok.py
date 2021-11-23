@@ -8,5 +8,6 @@ def solution(lines):
         time = each[1].split(':')
     
         minus = float(each[2][:-1])
-    
+        seconds = float(time[2])-minus 
+        
     return answer
