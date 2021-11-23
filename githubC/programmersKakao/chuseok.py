@@ -7,5 +7,6 @@ def solution(lines):
         each = lines[num].split()
         time = each[1].split(':')
     
+        minus = float(each[2][:-1])
     
     return answer
