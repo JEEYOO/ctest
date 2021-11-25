@@ -10,4 +10,6 @@ def solution(lines):
         minus = float(each[2][:-1])
         seconds = float(time[2])-minus 
         
+        if seconds < 0 :
+        
     return answer
