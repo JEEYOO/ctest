@@ -90,9 +90,10 @@ def solution(lines):
         for i in range(len(lines)): #일단 홀짝테스트
             
             #eachp+0.999 #얘가문제 3603.0009999999997
-            
-            if  (arrayList[2*i] <= round(eachp,3) and round(eachp,3) <= arrayList[2*i+1]) or (arrayList[2*i] <= round(eachp+0.999,3) and round(eachp+0.999,3) <= arrayList[2*i+1]) :
-                
+            if  arrayList[2*i+1] >= eachp and arrayList[2*i] < eachp+1000 :
+            ## 스타트하기전에 이미 끝났으면 안되고 ## 1초가 끝나기 전에 시작은 했어야 한다
+            #if  (arrayList[2*i] <= round(eachp,3) and round(eachp,3) <= arrayList[2*i+1]) or (arrayList[2*i] <= round(eachp+0.999,3) and round(eachp+0.999,3) <= arrayList[2*i+1]) :
+            #내 로직의 문제점은 굳이 시작하는 점 끼리 끝나는 점끼리 맞출려고 했다는 것
                  #맞네 처음이안되네!
                 count=count+1
                 
