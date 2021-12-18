@@ -1,21 +1,33 @@
-count = 0
+
 possibleList = []
 
 
 def arithmetic(N, List) :
-
-def solution(N, number):
-    possibleList
     possibleList.append([])
-    possibleList[count].append(N+N)
-    possibleList[count].append(N-N) #0
-    possibleList[count].append(N*N) 
-    possibleList[count].append(N/N) #1 
+    for i in range(len(possibleList[count-1])):
+        if (possibleList[count-1][i]+N) not in possibleList[count-1]:
+            possibleList[count].append(possibleList[count-1][i]+N)
+        if (possibleList[count-1][i]-N) not in possibleList[count-1]:
+            possibleList[count].append(possibleList[count-1][i]-N)
+        if (possibleList[count-1][i]*N) not in possibleList[count-1]:
+            possibleList[count].append(possibleList[count-1][i]*N)
+        if (possibleList[count-1][i]/N) not in possibleList[count-1]:
+            possibleList[count].append(possibleList[count-1][i]/N)
+            
+def solution(N, number):
+    count = 0
+    possibleList.append([])
+    possibleList[count].append(N) 
+    if number in possibleList[count]:
+        return count+1
     
-    while (count<=7) : {  #0부터 7까지. 배열넣으려면 0부터시작하는게 나음
-        count++
+    while (count<=7) : 
+        count = count+1
+        #print(count)
         arithmetic(count, N)
-    }
+        #print(possibleList)
+        if number in possibleList[count]: 
+            #print(possibleList[count])
+            return count+1
     
-    
-    return answer
+    return -1
