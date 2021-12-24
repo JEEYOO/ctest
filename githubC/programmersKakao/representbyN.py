@@ -1,6 +1,14 @@
 
 possibleList = []
 
+def NN(N, times) :
+    result = 0
+    for a in range(times):
+        each = N
+        for b in range(a):
+            each = each * 10
+        result += each
+    return result
 
 def arithmetic(N, List) :
     possibleList.append([])
