@@ -10,32 +10,40 @@ def NN(N, times) :
         result += each
     return result
 
-def arithmetic(N, List) :
-    possibleList.append([])
-    for i in range(len(possibleList[count-1])):
-        if (possibleList[count-1][i]+N) not in possibleList[count-1]:
-            possibleList[count].append(possibleList[count-1][i]+N)
-        if (possibleList[count-1][i]-N) not in possibleList[count-1]:
-            possibleList[count].append(possibleList[count-1][i]-N)
-        if (possibleList[count-1][i]*N) not in possibleList[count-1]:
-            possibleList[count].append(possibleList[count-1][i]*N)
-        if (possibleList[count-1][i]/N) not in possibleList[count-1]:
-            possibleList[count].append(possibleList[count-1][i]/N)
+def arithmetic(list1, list2, count) :
+    j= len(list1)
+    k= len(list2)
+    
+    for a in range(j):
+        for b in range(k):
+            if (list1[a]+list2[b]) not in possibleList[count]:
+                possibleList[count].append(list1[a]+list2[b])
+            if (list1[a]-list2[b]) not in possibleList[count]:
+                possibleList[count].append(list1[a]-list2[b])
+            if (list1[a]*list2[b]) not in possibleList[count]:
+                possibleList[count].append(list1[a]*list2[b])
+            if (list2[b]!=0) : 
+                if (list1[a]/list2[b]) not in possibleList[count]:
+                    possibleList[count].append(list1[a]/list2[b])
             
 def solution(N, number):
-    count = 0
-    possibleList.append([])
-    possibleList[count].append(N) 
-    if number in possibleList[count]:
-        return count+1
+    possibleList.append([]) #그냥 0은 empty하게 두자 
     
-    while (count<=7) : 
-        count = count+1
-        #print(count)
-        arithmetic(count, N)
-        #print(possibleList)
-        if number in possibleList[count]: 
+    count = 1
+    if number == N : return count #N이면 그냥 1 제출하라는거지
+    
+    possibleList.append([])
+    possibleList[count].append(N) #[ [], [5] ]
+    # print(possibleList) 맞는데
+    while count <= 8:
+        count=count+1
+        possibleList.append([])
+        possibleList[count].append(NN(N, count)) #55 추가  
+        for i in range(1,count): 
+            #if (count-i) >= i:
+            arithmetic(possibleList[i], possibleList[count-i],count)
+            if number in possibleList[count]: 
             #print(possibleList[count])
-            return count+1
+            return count
     
     return -1
