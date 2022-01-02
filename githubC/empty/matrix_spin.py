@@ -2,6 +2,12 @@ def numberset(vertexes) #아님 여기서바로 minimum만 배출
     vertexes[0], vertexes[1], vertexes[3], vertexes[4]
     
 def minimum(listset, row, column): #numberset 넣어서 최소값만 반환
+    #일단 그려야
+    matrix = [[0]*columns for i in range(rows)]
+    for a in rows:
+        for b in columns:
+            matrix[a][b] = rows + columns(b-1)
+    
     maximum = row*column
     for value in listset:
         if value < maximum:
