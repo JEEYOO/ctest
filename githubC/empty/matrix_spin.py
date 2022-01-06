@@ -56,7 +56,7 @@ def solution(rows, columns, queries):
 
     for square_num in range(len(queries)):
         matrix = substitute(matrix, queries[square_num]) #업데이트
-        print(matrix)
+        
         answer.append(minimum(matrix, queries[square_num], rows, columns))
     
     return answer
