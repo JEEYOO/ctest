@@ -1,23 +1,23 @@
 #4.5시간 22.01.04
 
 
-def substitute(matrix, square):
+def substitute(matrix, square, matrix2):
     a,b,c,d = square[0]-1,square[1]-1,square[2]-1,square[3]-1
     #x-1
     for e in range(d-b): #0~95  이 맥시멈이고96=97-1
-        matrix[b+e+1][a] = matrix[b+e][a]
+        matrix[b+e+1][a] = matrix2[b+e][a]
             # 0+e+1   0           0 e  0  
     #y-1
     for w in range(c-a): #0~99-0=99
-        matrix[d][a+1+w] = matrix[d][a+w]
+        matrix[d][a+1+w] = matrix2[d][a+w]
               #96 0+1+w           96 0+w
     #x+1
     for q in range(d-b):
-        matrix[b+q][c] = matrix[b+1+q][c]
+        matrix[b+q][c] = matrix2[b+1+q][c]
         
     #y+1
     for r in range(c-a):
-        matrix[b][a+r] = matrix[b][a+1+r]        
+        matrix[b][a+r] = matrix2[b][a+1+r]        
         
     return matrix
 
@@ -55,8 +55,8 @@ def solution(rows, columns, queries):
     #0,0인데 값은 1이어야하니
 
     for square_num in range(len(queries)):
-        matrix = substitute(matrix, queries[square_num]) #업데이트
-        
+        matrix2= [row[:] for row in matrix]
+        matrix = substitute(matrix, queries[square_num],matrix2) #업데이트
         answer.append(minimum(matrix, queries[square_num], rows, columns))
     
     return answer
