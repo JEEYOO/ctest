@@ -28,7 +28,7 @@ def solution(N, stages):
             if dic[n] > maximum:
                 maximum = dic[n]
                 save = n
-        if dic[save] != -1:            
+        if maximum != -1:            
             result.append(save)
             dic[save] = -1
         else:
