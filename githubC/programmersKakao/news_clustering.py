@@ -18,20 +18,18 @@ def solution(str1, str2):
     list1, list2 = list(str1.lower()), list(str2.lower())
     list1, list2 = combine(list1), combine(list2)
         
-    numerator = set()
-    denominator = set()
+    numerator,set3 = set(), set() #분자용set3
+    
     for a in list1:
-        denominator.add(a)
+        numerator.add(a)
+        if a in list2:
+            set3.add(a)
     for b in list2:
-        denominator.add(b)
+        numerator.add(b)
+        
+    if len(numerator) == 0 : return 65536
     
-    for k in range(len(list1)): #더 짧은 list로 해야
-        if list1[k] in list2: #set으로해야겠는데 
-            numerator.add(list1[k])
-    print(denominator)            
-    if len(numerator) == len(list1) : return 65536
-    
-    return int(65536*(len(numerator)/len(denominator)))
+    return int(65536*(len(set3)/len(numerator)))
 
 '''
 list.sort() = none
