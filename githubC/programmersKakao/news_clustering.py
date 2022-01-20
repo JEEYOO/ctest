@@ -18,14 +18,14 @@ def solution(str1, str2):
     list1, list2 = list(str1.lower()), list(str2.lower())
     list1, list2 = combine(list1), combine(list2)
         
-    numerator,set3 = set(), set() #분자용set3
+    numerator,set3 = [], [] #분자용set3
     
     for a in list1:
-        numerator.add(a)
+        numerator.append(a) #같은요소반복이 괜찮음 <> min 갯수로 들고와야함
         if a in list2:
-            set3.add(a)
+            set3.append(a)
     for b in list2:
-        numerator.add(b)
+        numerator.append(b)
         
     if len(numerator) == 0 : return 65536
     
