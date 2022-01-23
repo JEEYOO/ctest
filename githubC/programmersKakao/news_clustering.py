@@ -1,9 +1,9 @@
 def combine(ori_list):
     out_list = []
     for i in range(len(ori_list)-1):
-        if (charnum(ori_list[i]) and charnum(ori_list[i+1])) :
-            if not (ori_list[i]+ori_list[i+1]).isnumeric():
-                out_list.append(ori_list[i]+ori_list[i+1])
+        if ori_list[i].isalpha() and ori_list[i+1].isalpha() :
+            out_list.append(ori_list[i]+ori_list[i+1])
+            
     return out_list
 
 def charnum(subject):
