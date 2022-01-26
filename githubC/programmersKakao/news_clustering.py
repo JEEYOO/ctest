@@ -11,6 +11,12 @@ def charnum(subject):
         return True
     return False
 
+def addcount(exlist, count,value):
+    for i in range(count):
+        exlist.append(value)
+        
+    return exlist
+
 def solution(str1, str2):
     answer = 0
     #원소중복허용하니까 set은 안됨 ascending 등 사용가능 <> 근데 순서는 안 중요함
@@ -21,17 +27,15 @@ def solution(str1, str2):
     numerator,set3 = [], [] #분자용set3
     
     for a in list1:
-        numerator.append(a) #같은요소반복이 괜찮음 <> min 갯수로 들고와야함
-        if a in list2:
-            set3.append(a)
-    for b in list2:
-        numerator.append(b)
-        
-    if len(numerator) == 0 : return 65536
+        if a in list2 and a not in set3:
+            if list1.count(a) <= list2.count(a):
+                set3 = addcount(set3,list1.count(a),a) #분자는 괜찮음 <> 안괜찮음 
+            else:
+                set3 = addcount(set3,list2.count(a),a)
     
-    return int(65536*(len(set3)/len(numerator)))
+    denominator = len(list1)+len(list2)-len(set3)
+        
+    if denominator == 0 : return 65536
+    
+    return int(65536*(len(set3)/denominator))
 
-'''
-list.sort() = none
-sorted(list1,reverse=True)
-'''
