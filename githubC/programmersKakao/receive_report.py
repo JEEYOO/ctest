@@ -7,8 +7,7 @@ def solution(id_list, report, k):
         report_dic[each_id] = 0
     
     for each in report:
-        #if each.split()[0] in report_dic:
-        reporter = each.split()[0] 
-        reported = each.split()[1]
+        if each.split()[1] in report_dic:
+            report_dic[each.split()[1]] += 1
     
     return answer
