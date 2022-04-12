@@ -10,4 +10,8 @@ def solution(id_list, report, k):
         if each.split()[1] in report_dic:
             report_dic[each.split()[1]] += 1
     
+    for num in report_dic:
+        if report_dic[num] >= k:
+            point.append(num)
+    
     return answer
