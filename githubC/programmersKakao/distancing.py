@@ -9,13 +9,19 @@ def distancing(places):
     
     for i in range(rooms):
         cmap = places[i] #['POOOP', 'OXXOX', 'OPXPX', 'OOXOX', 'POXXP']
+        matrix = []
         
         for row in range(5):
+            matrix.append([])
             for col in range(5):
                 line = cmap[row]
                 chars = line[col].split()
-                print(chars)
-    
+                
+                #print(chars)
+                matrix[row].append(chars)
+
+        print(matrix)
+        
     return answer
 
 
