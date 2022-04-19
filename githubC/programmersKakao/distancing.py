@@ -2,18 +2,20 @@ def distancing(places):
     answer = []
     rooms = len(places)
     
+    boolmap = [[False for i in range(5)] for j in range(5)]
+    
+    matrix = [['' for i in range(5)] for j in range(5)]
+    
     for i in range(rooms):
         cmap = places[i] #['POOOP', 'OXXOX', 'OPXPX', 'OOXOX', 'POXXP']
-        matrix = []
         
         for row in range(5):
-            matrix.append([])
+            
             for col in range(5):
                 line = cmap[row]
                 chars = line[col].split()
                 
-                #print(chars)
-                matrix[row].append(chars)
+                matrix[row][col] = chars
 
         answer.append(bfs(matrix))
         
