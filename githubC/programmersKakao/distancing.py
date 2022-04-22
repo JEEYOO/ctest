@@ -23,9 +23,11 @@ def distancing(places):
 
 def bfs(matrix):
     result = 0 
+    
+    directions = ( (-1,0), (1,0), (0,-1), (0,1) )
+    
     for row in range(5):
         for col in range(5):
-            #print('test2') is working
             if matrix[row][col] == 'P': #row=3, col=0
                 if row+1 <=4 :  
                     result += bfs1(matrix, row+1, col) 
