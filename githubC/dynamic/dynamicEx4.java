@@ -18,7 +18,7 @@ public class 동적ex4 {// 백준 11727 행렬 2xn
 	
 	public static void main(String[] args) {
 		System.out.println(dynamics(8));
-		//.......... 어떻게하다보니되었네?
+		
 	}
 
 }
