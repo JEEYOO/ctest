@@ -14,14 +14,14 @@ def distancing(places):
             for col in range(5):
                 line = cmap[row]
                 chars = line[col].split()
-                
+                boolmap[row][col] = True
                 matrix[row][col] = chars
 
-        answer.append(bfs(matrix))
+        answer.append(bfs(matrix,boolmap))
         
     return answer
 
-def bfs(matrix):
+def bfs(matrix,boolmap):
     result = 0 
     
     directions = ( (-1,0), (1,0), (0,-1), (0,1) )
@@ -29,7 +29,7 @@ def bfs(matrix):
     for row in range(5):
         for col in range(5):
             if matrix[row][col] == 'P': #row=3, col=0
-                if row+1 <=4 :  
+                if row+1 <=4 : #and boolmap[row+1][col] == False
                     result += bfs1(matrix, row+1, col) 
                 if col+1 <=4 : 
                     result += bfs2(matrix, row, col+1)
