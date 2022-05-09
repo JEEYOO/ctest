@@ -1,4 +1,4 @@
-package 동적;
+package dynamic;
 
 public class GoldMine {
 	static int result = 0; 
@@ -31,11 +31,11 @@ public class GoldMine {
 		return result;
 	}
 	
-	// 출발점 반영해서 함수하나더만들어야겠는데
-	public static void dynamicStart(int[][] whatever,int b, int last, int each) { // 아어차피 x는 0이구만 
-		int a = 0;									// 스타트y,    4,        3 
-		while (a+1 < last) { /* 이렇게 하면 a 라는 마지막에서 */
-			if (b+1<each) { // 물론 거기서 없으면 찾지말고 out of bounds 처리
+	
+	public static void dynamicStart(int[][] whatever,int b, int last, int each) { 
+		int a = 0;								
+		while (a+1 < last) { 
+			if (b+1<each) { 
 				System.out.println("check");
 				if (whatever[a+1][b]>whatever[a][b+1]) {
 					result += whatever[a+1][b];
