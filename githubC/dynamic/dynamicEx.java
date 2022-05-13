@@ -2,7 +2,7 @@ package 동적;
 
 import java.util.ArrayList;
 
-public class 동적ex {
+public class dynamicEx {
 	
 	public static int dynamics(int[] hmm) { 
 		int nn = hmm.length;
@@ -20,34 +20,9 @@ public class 동적ex {
 		return arrr[nn-1];
 	}
 	
+	
 	public static void main(String[] args) {
 		int[] what = {1,3,1,5};
 		System.out.println(dynamics(what));
 	}
 }
-
-/*
-public static int whatever(int[] hmm) {
-	int answer = 0;
-	
-	
-	return answer;
-}
-
-public static int dynamics(int[] hmm) { //일단 manual 로 몇개는 계산 때리고 
-	int result = 0;
-	
-	if (hmm.length==1) {
-		return hmm[0];
-	} else if (hmm.length==2) {
-		result = (hmm[0] > hmm[1])? hmm[0] : hmm[1]; // 이거 어떻게하더라?
-		                                             // 잘 배우긴했는데 걍 max 쓰면되는데;;
-		return result;
-	}
-	
-	// int[] 안에 들어가있으니까 이걸 어떻게해야
-
-	
-	return result;
-}
-*/
