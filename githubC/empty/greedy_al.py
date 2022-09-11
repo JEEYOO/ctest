@@ -4,16 +4,15 @@ def solution(people, limit):
     
     people.sort()
     #print(people)
-    i = 0 # pointer
-    temp = 0
+    x = 0 
+    y = len(people)-1
+    #temp = 0
     
-    while(i<len(people)) : 
-        temp += people[i]
-        if temp > limit :
-            temp = 0
-            answer += 1
-        else : i += 1 
-        
-        if i == len(people) : answer += 1
+    while(x<y) : 
+        answer += 1
+        if people[x] + people[y] > limit : pass
+        else : x += 1 
+        y -= 1
+        if x==y : answer += 1
         
     return answer
