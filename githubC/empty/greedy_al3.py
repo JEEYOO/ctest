@@ -1,19 +1,17 @@
-def dic(char): #num 
-    if ord(char) < 79 :
-        joyst = ord(char) - 65
+def dic(char, num): #num 
+    distance = abs( ord(char)-ord(num) )
+    if distance > 13 :
+        return 26- distance
     else :
-        joyst = ord(char) - 91  
-    return joyst
+        return distance
 
 def solution(name):
-    answer = dic(name[0])
+    answer = dic(name[0], 'A')
     
     c=1 #counter
     which = dic(name[0])
     while c < len(name) :
-        answer += abs(which - dic(name[c])) 
-        which = dic(name[c])
-        #dic(name[p], dic(name[p-1], 0) ) #0 is wrong
+        answer += dic(name[c],name[c-1])
         c += 1
     
     return answer
