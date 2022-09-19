@@ -1,3 +1,4 @@
+#42860
 def a(char, pointer):
     if len(char)==pointer : return False
     
@@ -33,7 +34,7 @@ def solution(name):
                 answer += len(name)-p
                 return answer
         answer += len(name)-2 # counting char move   
-    else : #Orthodromic
+    else : #orthodromic
         c=1
         while c < len(name) :
             answer += dic(name[c])
