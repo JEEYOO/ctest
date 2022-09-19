@@ -1,4 +1,10 @@
 #42860
+def dic(char):
+    distance = abs( ord(char)-ord('A') )
+    if distance > 13 :
+        return 26- distance
+    else : return distance
+
 def a(char, pointer):
     if len(char)==pointer : return False
     
