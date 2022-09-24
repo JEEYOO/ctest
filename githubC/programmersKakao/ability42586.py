@@ -7,16 +7,16 @@ def solution(progresses, speeds):
     
     for i in range(len(progresses)):
         # rr = int(math.ceil((100-progresses[i])/speeds[i]))
-        rr = (100 - progresses[i]) / speeds[i]  # 0때문에 에러나는거 아니야? 
-        if rr > int(rr): # 이건뭐지? 혹시 / 가 몫이 아닌가? 아니네!!
-                         # 아니면 이 때 2.0 > 2 면 결과가 뭐냐? false 가아니라면 킹능성 *test해보기 -> 응 아니고 
-            rr = math.floor(rr) + 1 #잠만, 반올림인데? 이거 내림해야해 
+        rr = (100 - progresses[i]) / speeds[i]  # 0 
+        if rr > int(rr): #  / remainder 
+                         # 2.0 > 2 
+            rr = math.floor(rr) + 1 #floor not rounds 
         k[i] = int(rr)
 
     cnt = 0
     
     cnt2=1
-    while k: # 이건 또 뭐야;; 보니까 복붙했는데도 정답이 안 맞은 거였구나 내가 푼 게 아니라 
+    while k: 
         ddd = len(k)
         # cnt2=1
         r2 = k[cnt]
