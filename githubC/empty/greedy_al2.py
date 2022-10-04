@@ -1,4 +1,17 @@
 #42883
+
+ef maxnum(list1) :
+    maxnumber = list1[1]
+    for i in range(1,len(list1)):
+        if maxnumber < list1[i] : maxnumber = list1[i]
+            
+    return maxnumber
+
+def where(target, list2):
+    for i in range(len(list2)):
+        if list2[i] == target:
+            return i
+
 def cipher(number) :
     #n cipher 
     n=2
