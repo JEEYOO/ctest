@@ -16,8 +16,11 @@ def solution(friends, gifts):
         #gifts[fromTo].split()[1] 
     """
     for each in range(len(gifts)):
-        fromF, toF = gifts[each].split()
-        friends_map[friends_dic[fromF]][friends_dic[toF]] += 1 
+        fromT, toT = gifts[each].split()
+        fromKey = friends.index(fromT)
+        toKey = friends.index(toT)
+        temp = friends_map[fromKey][toKey] 
+        friends_map[fromKey][toKey] = temp+1
     print(friends_map)
     
     return answer
