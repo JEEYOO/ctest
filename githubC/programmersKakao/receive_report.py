@@ -10,9 +10,10 @@ def solution(id_list, report, k):
     dist_report = set(report)
     
     for each in report:
-        if each.split()[1] in report_dic:
-            report_dic[each.split()[1]] += 1
-    
+     '''if each.split()[1] in report_dic:
+            report_dic[each.split()[1]] += 1'''
+        report_dic[each.split()[1]] = report_dic.get(each.split()[1], 0) + 1
+        
     for num in report_dic:
         if report_dic[num] >= k:
             point.append(num)
