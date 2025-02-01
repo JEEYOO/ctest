@@ -5,6 +5,11 @@ print(t)
 
 #numbers = list(map(int, input().split()))
 
+n = input()
+numList = list(map(int, input().split()))
+maxNum = max(numList)
+sumNum = sum(numList)
+
 a = 4
 print("a")
 print('a')
