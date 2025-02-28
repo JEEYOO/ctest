@@ -1,9 +1,3 @@
-# Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
 class Solution(object):
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         
@@ -40,7 +34,7 @@ class Solution(object):
         #self.print_list_node(current) 8
         self.print_list_node(answer) 
         
-        return answer
+        return answer.next
     
     def length(self, whatever:ListNode) -> int:
         lengthNum = 0
