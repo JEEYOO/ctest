@@ -1,0 +1,35 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        dic = { "I" : 1, 
+                "V" : 5,
+                "X" : 10,
+                "L" : 50,
+                "C" : 100,
+                "D" : 500,
+                "M" : 1000}
+
+        answer = 0 
+        listS = list(s)
+        for i in range(len(s)-1):
+            if dic[listS[i]] < dic[listS[i+1]] :
+                answer -= dic[listS[i]]      
+            else : answer += dic[listS[i]] 
+        answer += dic[listS[len(s)-1]]
+
+        return answer
+
+"""
+if i+1 < len(s) :
+    if listS[i] == 'I' and listS[i+1] == 'V' : answer += 4 
+                i += 1
+                    elif listS[i] == 'I' and listS[i+1] == 'X' : answer += 9
+                    i += 1
+                    elif listS[i] == 'X' and listS[i+1] == 'L' : answer += 40
+                    i += 1                    
+                    elif listS[i] == 'X' and listS[i+1] == 'C' : answer += 90
+                    i += 1
+                    elif listS[i] == 'C' and listS[i+1] == 'D' : answer += 400
+                    i += 1
+                    elif listS[i] == 'C' and listS[i+1] == 'M' : answer += 900
+                    i += 1
+"""
