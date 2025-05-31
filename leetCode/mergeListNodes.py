@@ -6,11 +6,6 @@
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         
-        if list1 is None:
-            return list2
-        if list2 is None:
-            return list1
-
         answer : Optional[ListNode] = ListNode(0)
         answer2 = answer
 
@@ -24,17 +19,24 @@ class Solution:
                 answer.next = ListNode(list2.val)
                 answer = answer.next
                 list2 = list2.next
+        
+        if list1 is None:
+            while list2 :
+                answer.next = ListNode(list2.val)
+                answer = answer.next
+                list2 = list2.next
 
+        if list2 is None:
+            while list1 :
+                answer.next = ListNode(list1.val)
+                answer = answer.next
+                list1 = list1.next
+        
         return answer2.next
         
         #return list1
     
-    def leng(self, whatever) : 
-        count = 0
-        while whatever:
-            count+=1
-            whatever = whatever.next     
-        return count
+    
 
 """
 while self.leng(answer) != self.leng(list1)+self.leng(list2) :
