@@ -22,5 +22,17 @@ def solution(friends, gifts):
         temp = friends_map[fromKey][toKey] 
         friends_map[fromKey][toKey] = temp+1
     print(friends_map)
+
+    jisu1 = dict()
+    for i in range(num) :
+        jisu1[friends[i]] =  rowSum(friends_map, i)
     
     return answer
+
+def rowSum(map1, b) : #b 가 행
+    sumNum = 0
+    
+    for i in range(len(map1)) : # n * n 모양이니 괜찮
+        sumNum += map1[b][i]
+
+    return sumNum
