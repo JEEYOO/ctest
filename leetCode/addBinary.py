@@ -15,17 +15,11 @@ class Solution:
         return num
 
     def intToBi(self, d: int) -> str:
-        seung = 0 
-        m = 0
-        while True : #INFINITE?
-            
-            if d // 2 ** m == 1 :  #4
-                seung = m
-                break
-            else : m += 1
+
+        if d == 0 : return "0"
         
         strBi = ""
-        for i in range(seung, -1, -1):
+        for i in range(d.bit_length()-1, -1, -1):
                         #4
             left = d % (2 ** i)
            #1     5  4
