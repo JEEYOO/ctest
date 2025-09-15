@@ -5,11 +5,12 @@ class Solution:
 
         if self.depthCheck(root) == -1 :
             return False
-        else : return False
+        else : return True
 
     def depthCheck(self, root: Optional[TreeNode]) -> int:
         if root is None :
             return 0
+        
         depthL = self.depthCheckL(root.left)
         depthR = self.depthCheckL(root.right)
         
@@ -18,4 +19,4 @@ class Solution:
         elif abs(depthL - depthR) > 1 :
             return -1
         else :
-            return max(depthLL, depthLR) + 1
+            return max(depthL, depthR) + 1
