@@ -3,8 +3,10 @@ class Solution:
         
         if root is None :
             return False
-
-        result = root.val    
+        elif targetSum == root.val and root.left is None and root.right is None :
+            return True
+        
+        newTarget = targetSum - root.val    
 
         leftval = self.calSum(root.left)
         rightval = self.calSum(root.right)
@@ -14,9 +16,12 @@ class Solution:
 
         #print(result1)
 
-        if targetSum == result1:
+        if newTarget == leftval and root.left is None and root.right is None :
             return True
-        else : return False
+        if newTarget == rightval and root.left is None and root.right is None :
+            return True
+        elif newTarget < 0 : return False
+        else : return self.hasPathSum(root.left, newTarget) or self.hasPathSum(root.right, newTarget)
 
     def calSum(self, root: Optional[TreeNode]) -> int:
         if root is None :
