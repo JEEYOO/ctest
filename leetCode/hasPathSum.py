@@ -18,9 +18,8 @@ class Solution:
 
         if newTarget == leftval and root.left is None and root.right is None :
             return True
-        if newTarget == rightval and root.left is None and root.right is None :
+        elif newTarget == rightval and root.left is None and root.right is None :
             return True
-        elif newTarget < 0 : return False
         else : return self.hasPathSum(root.left, newTarget) or self.hasPathSum(root.right, newTarget)
 
     def calSum(self, root: Optional[TreeNode]) -> int:
