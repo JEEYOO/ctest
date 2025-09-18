@@ -11,9 +11,6 @@ class Solution:
         leftval = self.calSum(root.left)
         rightval = self.calSum(root.right)
 
-        result1 = result + leftval
-        result2 = result + rightval 
-
         #print(result1)
 
         if newTarget == leftval and root.left is None and root.right is None :
@@ -27,9 +24,3 @@ class Solution:
             return 0
         
         return root.val
-
-'''
-if rightval == result or leftval == result:
-            return True
-        else : return False
-'''
