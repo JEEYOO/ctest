@@ -11,13 +11,7 @@ class Solution:
         leftval = self.calSum(root.left)
         rightval = self.calSum(root.right)
 
-        #print(result1)
-
-        if newTarget == leftval and root.left is None and root.right is None :
-            return True
-        elif newTarget == rightval and root.left is None and root.right is None :
-            return True
-        else : return self.hasPathSum(root.left, newTarget) or self.hasPathSum(root.right, newTarget)
+        return self.hasPathSum(root.left, newTarget) or self.hasPathSum(root.right, newTarget)
 
     def calSum(self, root: Optional[TreeNode]) -> int:
         if root is None :
