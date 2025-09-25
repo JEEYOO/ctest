@@ -5,9 +5,9 @@ class Solution:
 
         for i in range(len(prices)) : 
             stdPrice = prices[i]
-               
-            for each in prices[i:] : 
-                if answer < each - stdPrice :
-                    answer = each - stdPrice    
+            maxP = prices[i:]
+            
+            if answer < maxP - stdPrice :
+                answer = maxP - stdPrice    
         
         return answer
