@@ -10,4 +10,4 @@ class Solution:
             else : 
                 answer = max(maxProfit, price - minPrice)    
         
-        return answer
+        return maxProfit
