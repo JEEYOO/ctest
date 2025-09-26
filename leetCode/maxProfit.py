@@ -5,7 +5,7 @@ class Solution:
 
         for i in range(len(prices)) : 
             stdPrice = prices[i]
-            maxP = prices[i:]
+            maxP = max(prices[i:])
             
             if answer < maxP - stdPrice :
                 answer = maxP - stdPrice    
