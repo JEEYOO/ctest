@@ -10,3 +10,5 @@ def hasCycle(self, head: Optional[ListNode]) -> bool:
             slow = slow.next
 
             if fast == slow : return True
+
+        return False
