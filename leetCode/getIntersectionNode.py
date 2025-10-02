@@ -5,7 +5,7 @@ def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[List
         
         while headA is not None and headA.next is not None : 
             listA.append(headA.val)
-            headA = headA.next
+            headA = headA.next 
         
         #USE 'IN' TO CHECK FOR THE OTHER LIST AND RETURN IF FOUND
         while headB is not None and headB.next is not None : 
