@@ -14,3 +14,8 @@ def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[List
             headB = headB.next
         
         return None
+
+'''
+Using set() is faster.
+There is another solution(Two pointers)
+'''
