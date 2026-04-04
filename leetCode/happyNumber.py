@@ -3,18 +3,20 @@ def isHappy(self, n: int) -> bool:
         #strN = str(n)
         #print(list(strN))
         listN = list(str(n))
+        records = set()
         
-        while ckNum != 1 : # len(listN) != 1  : #1 and int(listN[0])**2 > 10
+        while n != 1 and n not in records : # len(listN) != 1  : #1 and int(listN[0])**2 > 10
+            records.add(n)
             ckNum = 0
+            
             for each in listN : #1,0
                 ckNum += int(each)**2
 
-            if ckNum == 1:
-                return True
-            else : 
-                listN = list(str(ckNum)) 
+            listN = list(str(ckNum)) 
+
+            n = ckNum
         
-        if listN[0] == '1':
+        if n == 1:
             return True
         else : return False
 
